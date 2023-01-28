@@ -1,0 +1,74 @@
+:root {
+
+    /* TYPOGRAPHY */
+    --fs-base: 1rem;
+    --fs-scale-ratio: 0.9;
+
+    --fs-xlg: calc(var(--fs-base) * var(--fs-scale-ratio) * 2.25);
+    --fs-lg: calc(var(--fs-base) * var(--fs-scale-ratio) * 2.25);
+    --fs-md: calc(var(--fs-base) * var(--fs-scale-ratio) * 1.5);
+    --fs-sm: calc(var(--fs-base) * var(--fs-scale-ratio) * 1);
+    --fs-xs: calc(var(--fs-base) * var(--fs-scale-ratio) * 0.9375);
+    --fs-xxs: calc(var(--fs-base) * var(--fs-scale-ratio) * 0.8375);
+    --fs-xxxs: calc(var(--fs-base) * var(--fs-scale-ratio) * 0.7375);
+
+    --lh-sm: 1.2;
+    --lh-md: 1.4;
+    --lh-lg: 1.8;
+    --lh-xl: 2.2;
+
+    --font-family: 'Space Grotesk', sans-serif;
+
+    --html: 62.5%;
+    --body: 1.6rem;
+    --html-two: 70%;
+
+
+    --body-regular: 700 var(--fs-md) / var(--lh-lg) var(--font-family);
+    --input: 500 var(--fs-md) / var(--lh-lg) var(--font-family);
+    --before: 500 var(--fs-sm) / var(--lh-lg) var(--font-family);
+
+
+    /* COLORS */
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --purple-1: hsl(249, 99%, 64%);
+    --purple-2: hsl(278, 94%, 30%);
+    --button-shadow-hover: hsl(278, 94%, 30%, 0.4);
+    --button-shadow-active: hsl(278, 94%, 30%, 0.6);
+
+
+    /* HOVER */
+
+}
+
+@media (min-width: 36em) {
+    /*576px*/
+    :root {
+        --fs-scale-ratio: 0.95;
+        --before: 500 var(--fs-md) / var(--lh-lg) var(--font-family);
+
+    }
+
+}
+
+@media (min-width: 48em) {
+    /*768px*/
+    :root {
+        --fs-scale-ratio: 1.1;
+        --before: 500 var(--fs-lg) / var(--lh-lg) var(--font-family);
+    }
+
+}
+
+@media (min-width: 64em) {
+    /*1024px*/
+    :root {
+
+        font-size: var(--html-two);
+        --before: 500 var(--fs-sm) / var(--lh-lg) var(--font-family);
+    }
+
+}

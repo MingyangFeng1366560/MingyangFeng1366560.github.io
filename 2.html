@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .button:before,
+        .button:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        .button:before {
+            transform-origin: bottom;
+        }
+        .button:hover:before,
+        .button:hover:after {
+            transform: scaleY(1);
+        }
+        .button:active {
+            background: #333;
+        }
+    </style>
+  </head>
+
+
+    <body>
+      <a class="button">
+        Click me
+      </a>
+    </body>
+</html>

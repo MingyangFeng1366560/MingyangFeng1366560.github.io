@@ -1,0 +1,309 @@
+.cards {
+    position: relative;
+}
+
+.cards__card-container {
+    width: 80%;
+}
+
+.cards__card-container--back {
+    position: absolute;
+    top: 7%;
+    left: 14%;
+    animation: card-back 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.cards__card-container--back::before {
+    content: "000";
+    position: absolute;
+    left: 77%;
+    top: 41%;
+    color: var(--white);
+    font: var(--before);
+    letter-spacing: 0.3rem;
+}
+
+.cards__card-container--front {
+    position: absolute;
+    top: 43%;
+    left: 7%;
+    animation: card-front 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.cards__card-container--front::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/card-logo.svg");
+    background-position: 10% 10%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.cards__card-container--front::after {
+    content: "0000__0000__0000__0000";
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    font: var(--before);
+    letter-spacing: 0.3rem;
+    color: var(--white);
+}
+
+@keyframes card-front {
+    0% {
+        left: 81%;
+        opacity: 0;
+    }
+    90% {
+        left: 0%;
+
+    }
+    100% {
+        left: 7%;
+        opacity: 1;
+    }
+}
+
+@keyframes card-back {
+    0% {
+        left: -81%;
+        opacity: 0;
+    }
+    90% {
+        left: 20%;
+
+    }
+    100% {
+        left: 14%;
+        opacity: 1;
+    }
+}
+
+.cards__card-info::before {
+    content: "Janne Appleseed";
+    position: absolute;
+    /*todo*/
+    /*font: ;*/
+    color: var(--white);
+    /*left: 1rem;*/
+    left: 6%;
+    /*top: 150px;*/
+    top: 79%;
+    font: var(--before);
+}
+
+.cards__card-info::after {
+    content: "00/00";
+    position: absolute;
+    color: var(--white);
+    left: 82%;
+    top: 79%;
+    font: var(--before);
+}
+
+.main {
+    color: var(--purple-2);
+    font: var(--body-regular);
+    width: 90%;
+    margin: 10% auto;
+    /*margin-top: ;*/
+}
+
+.main__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.main__date, .main__date-input {
+    display: flex;
+    /*width: 320px;*/
+    gap: 0.5rem;
+
+}
+
+.main__month, .main__year, .main__CVC {
+    flex: 1 1 auto;
+    width: 30%;
+
+}
+
+.main__month-input, .main__year-input, .main__CVC-input {
+    flex: 1;
+    width: 30%;
+    max-width: 46.875rem;
+    /*max-width: 750px;*/
+
+}
+
+.main__input {
+    border-radius: 5px;
+    border: 1px solid var(--light-grayish-violet);
+    color：var(--white);
+    font: var(--input);
+    appearance: textfield;
+    cursor: pointer;
+    padding-left: 1rem;
+}
+
+.main__input:hover {
+    border-block-start-color: var(--purple-1);
+    border-right-color: var(--purple-1);
+    border-block-end-color: var(--very-dark-violet);
+    border-left-color: var(--purple-1);
+}
+
+.main__input::placeholder {
+    opacity: 0.2;
+}
+
+.main__submit-button {
+    display: inline-block;
+    color: var(--white);
+    background-color: var(--purple-2);
+    border-radius: 0.625rem;
+    animation: submit 2s ease;
+    position: relative;
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+.main__submit {
+    height: 100%;
+    width: 100%;
+    padding: 0.7em 1.2em;
+    background-color: var(--purple-2);
+    border-radius: 0.625rem;
+    color: var(--white);
+    border: 0 var(--white);
+}
+
+@keyframes submit {
+    from {
+        transform: translateY(12.5rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+.main__submit-button:hover {
+    /*悬停阴影、鼠标手*/
+    box-shadow: 0 0.75rem 1rem 0 var(--button-shadow-hover), 0 1.063rem 3.125rem 0 var(--button-shadow-hover);
+    cursor: pointer;
+
+}
+
+.main__submit-button:active {
+    /*按下效果、阴影变小*/
+    box-shadow: 0 0.375rem 0.5rem 0 var(--button-shadow-active), 0 0.5rem 1.563rem 0 var(--button-shadow-active);
+    transform: translateY(0.25rem);
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.main__submit-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple-2);
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: scale(1);
+    z-index: -1;
+    border-radius: 0.625rem;
+    transition: all 0.75s ease-in-out;
+
+}
+
+.main__submit-button:hover::before {
+    transition: all 0.75s ease-in-out;
+    transform-origin: center;
+    /*悬停放大*/
+    transform: scale(1.5);
+    opacity: 0;
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .cards {
+        flex: 40%;
+        height: 100%;
+    }
+
+    .cards__card-container {
+        max-width: 31.25rem;
+        min-width: 25rem;
+        max-height: 18.375rem;
+    }
+
+    .main {
+        flex: 60%;
+        padding-left: 10%;
+        display: flex;
+    }
+
+    .main__form {
+        max-width: 46.875rem;
+        margin-top: 20%;
+
+    }
+
+    .main__submit-button {
+        max-width: 36rem;
+    }
+
+    .cards__card-container--front {
+        top: 6%;
+    }
+
+    .cards__card-container--back {
+        top: 20%;
+        /*top: 48%;*/
+    }
+
+    @keyframes card-front {
+        0% {
+            left: 81%;
+            opacity: 0;
+        }
+        90% {
+            left: 25%;
+
+        }
+        100% {
+            left: 30%;
+            opacity: 1;
+        }
+    }
+    @keyframes card-back {
+        0% {
+            left: -81%;
+            opacity: 0;
+        }
+        90% {
+            left: 30%;
+
+        }
+        100% {
+            left: 25%;
+            opacity: 1;
+        }
+    }
+
+
+}

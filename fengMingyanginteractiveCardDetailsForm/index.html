@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Title</title>
+
+  </head>
+  <body>
+
+
+    <header class="cards">
+
+      <picture class="cards__background">
+        <source srcset="images/bg-main-desktop.png" media="(min-width:64em)">
+        <img class="cards__background-image" src="images/bg-main-mobile.png" alt="gradient image">
+      </picture>
+
+      <picture class="cards__card-container cards__card-container--back">
+        <img class="cards__card" src="images/bg-card-back.png" alt="back credit card">
+      </picture>
+
+
+      <div class="cards__card-container cards__card-container--front">
+        <img src="images/bg-card-front.png" alt="front credit card">
+        <span class="cards__card-info"></span>
+      </div>
+
+
+    </header>
+
+    <main class="main">
+      <form class="main__form" action="https://www.google.ca/" method="post">
+        <p class="main__name">
+          <label for="name">CARDHOLDER NAME</label>
+        </p>
+        <input class="main__input main__name-input" id="name" name="name" type="text"
+               placeholder="e.g. Jane Appleseed"/>
+        <p class="main__card-number">
+          <label for="card-number">CARD NUMBER</label>
+        </p>
+        <input class="main__input main__card-number-input" id="card-number" name="card-number" type="number"
+               placeholder="e.g. 1234 5678 9123 0000"/>
+        <div class="main__date">
+
+          <p class="main__month">
+            <label for="month">EXP.DATE</label>
+          </p>
+
+          <p class="main__year">
+            <label for="YY">[MM/YY]</label>
+          </p>
+
+          <p class="main__CVC">
+            <label for="CVC">CVC</label>
+          </p>
+        </div>
+        <div class="main__date-input">
+          <input class="main__input main__month-input" id="month" name="date" type="number" placeholder="MM"/>
+          <input class="main__input main__year-input" id="YY" name="YY" type="number" placeholder="YY"/>
+          <input class="main__input main__CVC-input" id="CVC" name="CVC" type="number" placeholder="e.g. 123"/>
+        </div>
+
+
+        <div class="main__submit-button">
+          <input class="main__submit" type="submit" value="CONFIRM"/>
+
+        </div>
+
+      </form>
+    </main>
+
+
+  </body>
+</html>
